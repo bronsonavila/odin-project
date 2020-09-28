@@ -2,23 +2,18 @@
 
 def caesar_cipher(str, shift)
   encrypted_str = str.split('').map do |char|
-    # Shift alpha characters.
-    if char.match(/^[[:alpha:]]$/)
-      # Handle wrapping from "Z" back to "A".
-      if char.ord <= 90 && char.ord + shift > 90
-        (65 + (char.ord + shift - 91) % 26).chr
-      # Handle wrapping from "z" back to "a".
-      elsif char.ord <= 122 && char.ord + shift > 122
-        (97 + (char.ord + shift - 123) % 26).chr
-      # Perform simple shift if wrapping is not required.
-      else
-        (char.ord + shift).chr
-      end
-    # Keep non-alpha characters the same.
+    # Do not shift non-alpha characters.
+    next char if char.match(/^[[:alpha:]]$/).nil?
+
+    if char.ord <= 90 && char.ord + shift > 90
+      (65 + (char.ord + shift - 91) % 26).chr # Wrap from "Z" back to "A".
+    elsif char.ord <= 122 && char.ord + shift > 122
+      (97 + (char.ord + shift - 123) % 26).chr # Wrap from "z" back to "a".
     else
-      char
+      (char.ord + shift).chr # Perform simple shift if wrapping is not required.
     end
   end
+
   encrypted_str.join
 end
 

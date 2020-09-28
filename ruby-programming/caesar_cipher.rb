@@ -4,13 +4,13 @@ def caesar_cipher(str, shift)
   encrypted_str = str.split('').map do |char|
     # Shift alpha characters.
     if char.match(/^[[:alpha:]]$/)
-      # Handle looping of `A-Z`.
+      # Handle wrapping from "Z" back to "A".
       if char.ord <= 90 && char.ord + shift > 90
         (65 + (char.ord + shift - 91) % 26).chr
-      # Handle looping of `a-z`.
+      # Handle wrapping from "z" back to "a".
       elsif char.ord <= 122 && char.ord + shift > 122
         (97 + (char.ord + shift - 123) % 26).chr
-      # Perform normal shift if looping is not required.
+      # Perform simple shift if wrapping is not required.
       else
         (char.ord + shift).chr
       end

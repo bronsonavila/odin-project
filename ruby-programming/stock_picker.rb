@@ -21,6 +21,6 @@ def stock_picker(prices)
   [best_purchase_date, best_sell_date]
 end
 
-p stock_picker([17, 3, 6, 9, 15, 8, 6, 1, 10]) # [1, 4] => 15 - 3 = 12
-p stock_picker([6, 8, 6, 17, 9, 15, 1, 10, 3]) # [0, 3] => 17 - 6 = 11
-p stock_picker([8, 6, 17, 9, 6, 3, 15, 10, 1]) # [5, 6] => 15 - 3 = 12
+p stock_picker([17, 3, 6, 9, 15, 8, 6, 1, 10]) # [1, 4]    (15 - 3 = 12)
+p stock_picker([6, 8, 6, 17, 9, 15, 1, 10, 3]) # [0, 3]    (17 - 6 = 11)
+p stock_picker([8, 6, 17, 9, 6, 3, 15, 10, 1]) # [5, 6]    (15 - 3 = 12)

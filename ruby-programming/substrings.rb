@@ -1,4 +1,4 @@
-# https://www.theodinproject.com/courses/ruby-programming/lessons/sub-strings?ref=lnav
+# https://www.theodinproject.com/courses/ruby-programming/lessons/sub-strings
 
 dictionary = %w[below down go going horn how howdy it i low own part partner sit]
 

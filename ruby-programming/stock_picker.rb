@@ -5,7 +5,7 @@ def stock_picker(prices)
   best_sell_date = nil
   highest_profit = 0
 
-  prices.each_with_index do |_, i|
+  prices.each_index do |i|
     break if i == prices.length - 1 # Nothing to compare at final index.
 
     for j in i..prices.length - 1
